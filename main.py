@@ -2,7 +2,7 @@
 
 import random
 
-choices = ["rock" , "paper", "scissors"]
+choices = ["Rock" , "Paper", "Scissors"]
 
 computer = random.choice(choices)
 
@@ -13,22 +13,43 @@ while player == False:
     if player == computer:
         print("It's a tie! You both chose", player)
     elif player == "Rock":
-        if computer == "scissors":
+        if computer == "Scissors":
             print("You win!", player, "crushed", computer)
         else:
             print("You lost!", computer, "covered", player)
     elif player == "Paper":
-        if computer == "rock":
-            print("You win!", player, "covered", computer)
-        else:
+        if computer == "Scissors":
             print("You lost!", computer, "cut", player)
+        else:
+            print("You win!", player, "covered", computer)
     elif player == "Scissors":
-        if computer == "paper":
+        if computer == "Paper":
             print("You win!", player, "cut", computer)
         else:
             print("You lost!", computer, "crushed", player)
     else:
         print("Choose either Rock, Paper, or Scissors!")
-    
-player = False
-computer = random.choice(choices)
+for i in range(100):   
+    player = False
+    computer = random.choice(choices)
+    while player == False:
+        player = input("Rock, Paper, or Scissors?")
+        if player == computer:
+            print("It's a tie! You both chose", player)
+        elif player == "Rock":
+            if computer == "Scissors":
+                print("You win!", player, "crushed", computer)
+            else:
+                print("You lost!", computer, "covered", player)
+        elif player == "Paper":
+            if computer == "Scissors":
+                print("You lost!", computer, "cut", player)
+            else:
+                print("You win!", player, "covered", computer)
+        elif player == "Scissors":
+            if computer == "Paper":
+                print("You win!", player, "cut", computer)
+            else:
+                print("You lost!", computer, "crushed", player)
+        else:
+            print("Choose either Rock, Paper, or Scissors!")
